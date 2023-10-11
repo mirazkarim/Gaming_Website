@@ -1,0 +1,518 @@
+/* common css start */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #000;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  vertical-align: middle;
+}
+
+.container {
+  width: 1140px;
+  margin: auto;
+}
+
+/* common css end */
+/*nav start */
+#main {
+  background: url(../images/BG.png);
+  background-size: cover;
+  background-position: middle;
+  width: 100%;
+  height: 100vh;
+  /*nav end */
+  /*hero start */
+  /*hero end */
+}
+#main #nav .main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+}
+#main #nav .main .logo a {
+  font-size: 40px;
+  font-weight: 700;
+  font-family: sans-serif;
+  text-transform: uppercase;
+  color: #00FF00;
+}
+#main #nav .main .service {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+#main #nav .main .service a i {
+  font-size: 35px;
+  color: #00FF00;
+  transition: all ease 0.5s;
+}
+#main #nav .main .service a i:hover {
+  color: rgb(255, 1, 48);
+}
+#main #nav .main .button {
+  width: 100px;
+  height: 40px;
+  background: transparent;
+  border-radius: 30px;
+  border: 2px solid #00FF00;
+  overflow: hidden;
+  position: relative;
+  transition: all ease 0.5s;
+  cursor: pointer;
+}
+#main #nav .main .button:hover {
+  box-shadow: rgba(4, 255, 0, 0.5) 0px 2px 50px;
+}
+#main #nav .main .button .back {
+  height: 100%;
+  width: 100%;
+  background: #00FF00;
+  position: absolute;
+  right: -100%;
+  transition: all ease 0.5s;
+}
+#main #nav .main .button .back p {
+  font-size: 15px;
+  font-weight: 800;
+  text-transform: uppercase;
+  font-family: sans-serif;
+  text-align: left;
+  padding-left: 12px;
+  padding-top: 7px;
+}
+#main #nav .main .button a {
+  position: absolute;
+  width: 37px;
+  height: 37px;
+  background: #00FF00;
+  border-radius: 50%;
+  right: 0;
+  top: 0;
+}
+#main #nav .main .button:hover .back {
+  right: 0;
+}
+#main #nav .main .button a i {
+  font-size: 30px;
+  color: #000;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all ease 0.5s;
+}
+#main #nav .main .button:hover i {
+  color: black;
+}
+#main #hero .main {
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#main #hero .main a .glow-on-hover {
+  width: 400px;
+  height: 150px;
+  border: none;
+  outline: none;
+  font-size: 50px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #fff;
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+}
+#main #hero .main a .glow-on-hover:before {
+  content: "";
+  background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 20s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+#main #hero .main a .glow-on-hover:active {
+  color: #000;
+}
+#main #hero .main a .glow-on-hover:active:after {
+  background: transparent;
+}
+#main #hero .main a .glow-on-hover:hover:before {
+  opacity: 1;
+}
+#main #hero .main a .glow-on-hover:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #111;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+@keyframes glowing {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+/*hero-game start */
+#hero_game .main {
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#hero_game .main .player {
+  width: 500px;
+  background: rgba(0, 255, 113, 0.55);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5.3px);
+  -webkit-backdrop-filter: blur(5.3px);
+  border: 1px solid rgba(26, 255, 0, 0.29);
+  padding: 40px;
+  border-radius: 30px;
+}
+#hero_game .main .player .text {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+#hero_game .main .player .text h1 {
+  font-size: 20px;
+  font-weight: 700;
+  font-family: sans-serif;
+  text-transform: uppercase;
+}
+#hero_game .main .player #player_one_input {
+  width: 100%;
+  height: 40px;
+  font-size: 15px;
+  font-weight: 600;
+  font-family: sans-serif;
+  text-transform: capitalize;
+  border: 2px solid #000;
+  padding: 20px;
+  border-radius: 15px;
+  background: none;
+  color: #000;
+  margin-bottom: 20px;
+  outline: none;
+}
+#hero_game .main .player #player_two_input {
+  width: 100%;
+  height: 40px;
+  font-size: 15px;
+  font-weight: 600;
+  font-family: sans-serif;
+  text-transform: capitalize;
+  border: 2px solid #000;
+  padding: 20px;
+  border-radius: 15px;
+  background: none;
+  color: #000;
+  margin-bottom: 20px;
+  outline: none;
+}
+#hero_game .main .player p {
+  font-size: 20px;
+  font-weight: 700;
+  font-family: sans-serif;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+#hero_game .main .player #player_two_error {
+  font-size: 20px;
+  font-weight: 700;
+  font-family: sans-serif;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+#hero_game .main .player a .glow-on-hover {
+  width: 220px;
+  height: 50px;
+  border: none;
+  outline: none;
+  font-size: 20px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #fff;
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  margin-left: 50%;
+}
+#hero_game .main .player a .glow-on-hover:before {
+  content: "";
+  background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 20s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+#hero_game .main .player a .glow-on-hover:active {
+  color: #000;
+}
+#hero_game .main .player a .glow-on-hover:active:after {
+  background: transparent;
+}
+#hero_game .main .player a .glow-on-hover:hover:before {
+  opacity: 1;
+}
+#hero_game .main .player a .glow-on-hover:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #111;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+@keyframes glowing {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+#hero_game .main #player_two {
+  display: none;
+}
+#hero_game .main #player_two h1 {
+  font-size: 20px;
+  font-weight: 700;
+  font-family: sans-serif;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+#hero_game .main #player_two .progress_bar {
+  width: 100%;
+  border-radius: 20px;
+  height: 20px;
+  background: red;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+#hero_game .main #player_two .progress_bar #one {
+  width: 33.3%;
+  height: 100%;
+  background: #00FF00;
+}
+#hero_game .main #player_two .progress_bar #two {
+  width: 33.3%;
+  height: 100%;
+  background: #00FF00;
+}
+#hero_game .main #player_two .progress_bar #three {
+  width: 33.3%;
+  height: 100%;
+  background: #00FF00;
+}
+
+/*hero-game end */
+/*hero_win start */
+#winner {
+  height: 100vh;
+  width: 100vh;
+  background: url(../images/win.gif);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-left: 40%;
+}
+#winner a .glow-on-hover {
+  width: 400px;
+  height: 100px;
+  border: none;
+  outline: none;
+  font-size: 50px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #fff;
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  margin-top: 50px;
+}
+#winner a .glow-on-hover:before {
+  content: "";
+  background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 20s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+#winner a .glow-on-hover:active {
+  color: #000;
+}
+#winner a .glow-on-hover:active:after {
+  background: transparent;
+}
+#winner a .glow-on-hover:hover:before {
+  opacity: 1;
+}
+#winner a .glow-on-hover:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #111;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+@keyframes glowing {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+/*hero_win end */
+/*lose start */
+#lose {
+  height: 100vh;
+  width: 100vh;
+  background: url(../images/lose.gif);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-left: 40%;
+}
+#lose a .glow-on-hover {
+  width: 400px;
+  height: 100px;
+  border: none;
+  outline: none;
+  font-size: 50px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #fff;
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  margin-top: 50px;
+}
+#lose a .glow-on-hover:before {
+  content: "";
+  background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 20s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+#lose a .glow-on-hover:active {
+  color: #000;
+}
+#lose a .glow-on-hover:active:after {
+  background: transparent;
+}
+#lose a .glow-on-hover:hover:before {
+  opacity: 1;
+}
+#lose a .glow-on-hover:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #111;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+@keyframes glowing {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+/* lose end */
+/* start */
+/* end *//*# sourceMappingURL=style.css.map */
